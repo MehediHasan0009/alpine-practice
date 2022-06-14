@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+    </head>
+    <body class="bg-gray-400">
+      <div class="container mx-auto px-4 mt-4" x-data="{ magnifiedImg: 'tabImg1'}">
+        <div>
+          <img 
+            src="https://cdn.mos.cms.futurecdn.net/ytKr6L3ZTP4Pf2acEpzpMM-320-80.jpeg" alt="mac pro"
+            x-show="magnifiedImg === 'tabImg1'"
+            >
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQItRe6LFqFaOkZnQZv9RVNguTy3Ltd2L9h9omBFTnWXVhxMFwGbmTZst1mv7r1eWLZISY&usqp=CAU" alt="mac pro"
+            x-show="magnifiedImg === 'tabImg2'"
+          >
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROX6GW3DvhKdzGCQZgsq4cEwD_TaePvZ8uCvTpsV1kBzb8jAAQgXeOUzqwAB0WRvM4vFg&usqp=CAU" alt="mac pro"
+            x-show="magnifiedImg === 'tabImg3'"  
+          >
+        </div>
+        <div class="flex items-center mt-4">
+          <a 
+            href="#" 
+            class="border border-transparent hover:border-blue-500"
+            @click.prevent="magnifiedImg = 'tabImg1'"
+            :class="magnifiedImg === 'tabImg1'? 'border-blue-600':''"
+          >
+            <img src="https://cdn.mos.cms.futurecdn.net/ytKr6L3ZTP4Pf2acEpzpMM-320-80.jpeg" alt="mac pro" class="w-12">
+          </a>
+
+          <a 
+            href="#" 
+            class="border border-transparent hover:border-blue-500 ml-2"
+            @click.prevent="magnifiedImg = 'tabImg2'"
+            :class="magnifiedImg === 'tabImg2'? 'border-blue-600' :''"
+          >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQItRe6LFqFaOkZnQZv9RVNguTy3Ltd2L9h9omBFTnWXVhxMFwGbmTZst1mv7r1eWLZISY&usqp=CAU" alt="mac pro" class="w-12">
+          </a>
+
+          <a 
+            href="#" 
+            class="border border-transparent hover:border-blue-500 ml-2"
+            @click.prevent="magnifiedImg = 'tabImg3'"
+            :class="magnifiedImg === 'tabImg3'? 'border-blue-600':''"
+          >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROX6GW3DvhKdzGCQZgsq4cEwD_TaePvZ8uCvTpsV1kBzb8jAAQgXeOUzqwAB0WRvM4vFg&usqp=CAU" alt="mac pro" class="w-12">
+          </a>
+        </div>
+      </div>
+    </body>
+</html>
